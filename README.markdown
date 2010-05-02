@@ -36,4 +36,4 @@ QUICK START
 
 7. Upload the database to Heroku
 
-        rake db:push
+        heroku db:push
