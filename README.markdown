@@ -28,9 +28,12 @@ QUICK START
 
 5. Bootstrap
 
-        heroku rake db:bootstrap
+        rake db:bootstrap
 
 6. Create an administrator
 
-        heroku rake db:admin:create
+        rake db:admin:create
 
+7. Upload the database to Heroku
+
+        rake db:push
