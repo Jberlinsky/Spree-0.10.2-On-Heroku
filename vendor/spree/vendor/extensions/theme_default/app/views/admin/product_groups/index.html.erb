@@ -1,0 +1,35 @@
+<% render 'admin/shared/product_sub_menu' %>
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_product_group"), new_object_url, :icon => 'add'  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("listing_product_groups") %></h1>
+
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= ProductGroup.human_attribute_name("name") %></th>
+      <th><%= ProductGroup.human_attribute_name("url") %></th>
+      <th><%= ProductGroup.human_attribute_name("product_scopes")  %></th>
+      <th><%= ProductGroup.human_attribute_name("product_count")  %></th>
+      <th><%= t(:action) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_groups.each do |pg| %>
+      <tr id="<%= dom_id pg %>">
+        <td><%= link_to pg.name, object_path(pg) %></td>
+        <td><%= link_to pg_search_path(:product_group_name => pg.permalink), pg_search_path(:product_group_name => pg.permalink) %></td>
+        <td><%= pg.product_scopes.map(&:to_sentence).join("<br />") %></td>
+        <td><%= pg.products.count %></td>
+        <td><%= link_to_edit pg %> &nbsp; <%= link_to_delete pg %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate(:previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;") %>

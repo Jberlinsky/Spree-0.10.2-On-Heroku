@@ -1,0 +1,27 @@
+<div class='toolbar'>
+  <ul class='actions'>
+<% if @order.outstanding_balance? %>
+    <li>
+      <%= button_link_to t("new_payment"), new_admin_order_payment_url(@order), :icon => 'add' %>
+    </li>
+<% end %>
+  </ul>
+  <br class='clear' />
+</div>
+
+<%= render 'admin/shared/order_tabs', :current => "Payments" %>
+
+<% if @order.outstanding_credit? %>
+  <p><%= t('credit_owed') %> <strong><%= number_to_currency @order.outstanding_credit %></strong></p>
+<% end %>
+<% if @order.outstanding_balance? %>
+  <p><%= t('balance_due') %> <strong><%= number_to_currency @order.outstanding_balance %></strong></p>
+<% end %>
+
+<h2><%= t("finalized_payments") %></h2>
+<%= render 'list', :payments => @payments %>
+
+<h2><%= t("pending_payments") %></h2>
+<%= render 'list', :payments => @order.checkout.payments %>
+
+<%= button_link_to t('continue'), admin_orders_url %>

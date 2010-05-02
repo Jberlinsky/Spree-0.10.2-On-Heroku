@@ -1,0 +1,17 @@
+rails -v 2.3.5
+highline -v '1.5.1'
+authlogic -v '>=2.1.2'
+authlogic-oid -v '1.0.4'
+activemerchant -v '1.5.1'
+activerecord-tableless -v '0.1.0'
+less -v '1.2.20'
+stringex -v '1.0.3'
+chronic -v '0.2.3'
+whenever -v '0.3.7'
+searchlogic -v '2.3.5'
+will_paginate -v '2.3.11'
+faker -v '0.3.1'
+paperclip -v '>=2.3.1.1'
+state_machine -v '0.8.0'
+right_aws
+aws-s3

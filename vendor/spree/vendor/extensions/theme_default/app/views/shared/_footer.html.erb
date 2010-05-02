@@ -1,0 +1,12 @@
+<div id="footer">
+  <div class="left">
+    <p>
+      <%= t("powered_by") %> <a href="http://www.spreecommerce.com/">Spree</a>
+			Adapted to Heroku by <a href="http://www.jasonberlinsky.com/">Jason Berlinsky</a>
+    </p>
+  </div>
+  <div class="right">
+    <%= render 'shared/language_bar' if Spree::Config[:allow_locale_switching] %>
+  </div>
+</div>   
+<%= render 'shared/google_analytics' %>

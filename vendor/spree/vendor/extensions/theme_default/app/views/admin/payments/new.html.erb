@@ -1,0 +1,19 @@
+<%= render :partial => 'admin/shared/order_tabs', :locals => {:current => "Payments"} %>
+
+<h2><%= t('new') %> <%= t("activerecord.models.#{@object.class.to_s.underscore}.one") %></h2>
+
+<%= error_messages_for :payment %>
+
+<% form_for @payment, :url => collection_url do |f| %>
+
+  <%= render "form", :f => f %>
+
+  <p class="form-buttons">
+    <%= button @order.in_progress? ? t('continue') : t('update') %>
+  </p>
+
+<% end %>
+
+<% content_for :head do %>
+<%= javascript_include_tag 'admin/payments/new' %>
+<% end %>

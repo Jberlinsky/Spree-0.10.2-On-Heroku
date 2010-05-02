@@ -1,0 +1,10 @@
+<%= render :partial => 'admin/shared/order_tabs', :locals => {:current => "Payments"} %>
+
+<h2><%= t("activerecord.models.#{@object.class.to_s.underscore}.one") %></h2>
+
+<p>
+  <label><%= t("amount") %>:</label></td>
+  <%= object.amount %>
+</p>
+
+<%= render "admin/payments/source_views/#{@payment.payment_method.method_type}", :payment => object %>
