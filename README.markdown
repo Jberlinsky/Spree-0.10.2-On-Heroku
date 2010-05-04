@@ -14,7 +14,7 @@ QUICK START
 
 1. Clone this repository
 
-        git clone git@github.com:Jberlinsky/Spree-0.10.2-On-Heroku.git spree-heroku
+        git clone git://github.com/Jberlinsky/Spree-0.10.2-On-Heroku.git spree-heroku
 
 2. Edit vendor/spree/app/models/image.rb to reflect your Amazon S3 credentials
 
